@@ -1,0 +1,1 @@
+Current repository is for educational matters and some simple tasks made during course completion. As well posted several notes on my Swift and UI learning.

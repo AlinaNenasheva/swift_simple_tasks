@@ -30,36 +30,36 @@ class ViewController: UIViewController {
         
     }
     
-    func sumUp(_ firstValue: Int, _ secondValue: Int){
-        print("\(firstValue) + \(secondValue) = \(firstValue + secondValue)")
+    func sumUp(_ firstValue: Int, _ secondValue: Int)-> Int{
+        return firstValue + secondValue
     }
     
-    func sumUp(_ firstValue: Double, _ secondValue: Double){
-        print("\(firstValue) + \(secondValue) = \(firstValue + secondValue)")
+    func sumUp(_ firstValue: Double, _ secondValue: Double)-> Double{
+        return firstValue + secondValue
     }
     
-    func subtract(_ firstValue: Int, _ secondValue: Int){
-        print("\(firstValue) - \(secondValue) = \(firstValue - secondValue)")
+    func subtract(_ firstValue: Int, _ secondValue: Int)-> Int{
+        return firstValue - secondValue
     }
     
-    func subtract(_ firstValue: Double, _ secondValue: Double){
-        print("\(firstValue) - \(secondValue) = \(firstValue - secondValue)")
+    func subtract(_ firstValue: Double, _ secondValue: Double)-> Double{
+        return firstValue - secondValue
     }
     
-    func multiply(_ firstValue: Int, _ secondValue: Int){
-        print("\(firstValue) * \(secondValue) = \(firstValue * secondValue)")
+    func multiply(_ firstValue: Int, _ secondValue: Int)-> Int{
+        return firstValue * secondValue
     }
     
-    func multiply(_ firstValue: Double, _ secondValue: Double){
-        print("\(firstValue) * \(secondValue) = \(firstValue * secondValue)")
+    func multiply(_ firstValue: Double, _ secondValue: Double)-> Double{
+        return firstValue * secondValue
     }
     
-    func divide(_ firstValue: Int, _ secondValue: Int){
-        print("\(firstValue) / \(secondValue) = \(firstValue / secondValue)")
+    func divide(_ firstValue: Int, _ secondValue: Int)-> Int{
+        return firstValue / secondValue
     }
     
-    func divide(_ firstValue: Double, _ secondValue: Double){
-        print("\(firstValue) / \(secondValue) = \(firstValue / secondValue)")
+    func divide(_ firstValue: Double, _ secondValue: Double)-> Double{
+        return firstValue / secondValue
     }
     
     func countFourDigitNumber(value: Int){

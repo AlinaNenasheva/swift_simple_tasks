@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4811325C250D90B400C43431 /* BeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811325B250D90B400C43431 /* BeerManager.swift */; };
 		48AE8B2225069C2E00FC502D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE8B2125069C2E00FC502D /* AppDelegate.swift */; };
 		48AE8B2425069C2E00FC502D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE8B2325069C2E00FC502D /* SceneDelegate.swift */; };
 		48AE8B2625069C2E00FC502D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE8B2525069C2E00FC502D /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4811325B250D90B400C43431 /* BeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerManager.swift; sourceTree = "<group>"; };
 		48AE8B1E25069C2E00FC502D /* Practice_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AE8B2125069C2E00FC502D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AE8B2325069C2E00FC502D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				48AE8B2325069C2E00FC502D /* SceneDelegate.swift */,
 				48AE8B2525069C2E00FC502D /* ViewController.swift */,
 				48AE8B2725069C2E00FC502D /* Main.storyboard */,
+				4811325B250D90B400C43431 /* BeerManager.swift */,
 				48AE8B2A25069C3500FC502D /* Assets.xcassets */,
 				48AE8B2C25069C3500FC502D /* LaunchScreen.storyboard */,
 				48AE8B2F25069C3500FC502D /* Info.plist */,
@@ -265,6 +268,7 @@
 				48AE8B2625069C2E00FC502D /* ViewController.swift in Sources */,
 				48AE8B2225069C2E00FC502D /* AppDelegate.swift in Sources */,
 				48AE8B2425069C2E00FC502D /* SceneDelegate.swift in Sources */,
+				4811325C250D90B400C43431 /* BeerManager.swift in Sources */,
 				48AE8B562506E59A00FC502D /* Beer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

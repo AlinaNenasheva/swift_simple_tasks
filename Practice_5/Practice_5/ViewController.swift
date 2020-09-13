@@ -10,7 +10,9 @@ import UIKit
 
 
 class ViewController: UIViewController {
+
     @IBOutlet weak var darkBeer: UIButton!
+    @IBOutlet weak var beerImage: UIImageView!
     
     @IBOutlet weak var lightBeer: UIButton!
     
@@ -19,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var countryOfOrigin: UITextField!
     
     @IBOutlet weak var priceText: UITextField!
+    
+    @IBOutlet weak var countButton: UIButton!
     
     var beerSort = ""
     var beerPrice = 0
@@ -49,9 +53,21 @@ class ViewController: UIViewController {
         
         beerCountry = countryOfOrigin.text ?? ""
     }
+    
     @IBAction func getDrunk(_ sender: Any) {
-        let beer = Beer(name: beerSort, price: beerPrice, countryOfOrigin: beerCountry)
-        print ("Вы заказали \(beer.name) пиво из \("страны " + beer.countryOfOrigin) за \(beer.price) рублей")
+        let beer = Beer(name: beerSort, price: beerPrice, countryOfOrigin: beerCountry, leftBeerCups: 10)
+        if beer.name == "фруктовое"{
+            BeerManager.shared.orderBeer(beer: beer, type: 1)
+        }else if beer.name == "темное"{
+            BeerManager.shared.orderBeer(beer: beer, type: 2)
+        }else{
+            BeerManager.shared.orderBeer(beer: beer, type: 3)
+        }
+        
+    }
+    
+    @IBAction func countProfit(_ sender: Any) {
+        BeerManager.shared.countProfit()
     }
 }
 

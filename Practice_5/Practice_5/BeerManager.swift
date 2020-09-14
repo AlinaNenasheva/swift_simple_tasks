@@ -16,19 +16,18 @@ class BeerManager{
     private let fruitBeer:Beer = Beer(name: "фруктовое", price: 0, countryOfOrigin: "", leftBeerCups: 10)
     private init() {}
     
-    func orderBeer(beer: Beer, type: Int){
-        if fruitBeer.leftBeerCups != 0 && type == 1{
+    func orderBeer(beer: Beer){
+        if fruitBeer.leftBeerCups != 0 && beer.name == "фруктовое" {
             fruitBeer.leftBeerCups -= 1
             profit += beer.price
-        }else if darkBeer.leftBeerCups != 0 && type == 2{
+        } else if darkBeer.leftBeerCups != 0 && beer.name == "темное" {
             darkBeer.leftBeerCups -= 1
             profit += beer.price
         }
-        else if lightBeer.leftBeerCups != 0 && type == 3{
+        else if lightBeer.leftBeerCups != 0 && beer.name == "светлое" {
             lightBeer.leftBeerCups -= 1
             profit += beer.price
-        }
-        else{
+        } else {
             print("Oops, this beer is currently out of stock")
         }
     }

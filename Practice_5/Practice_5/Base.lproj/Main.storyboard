@@ -26,22 +26,24 @@
                                 <rect key="frame" x="233" y="109" width="61" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Светлое">
                                     <color key="titleColor" red="0.6196972150259068" green="0.36445166778604626" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="getLightBeer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="agv-cW-ibL"/>
+                                    <action selector="lightBeerButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="agv-cW-ibL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBB-ed-9jS">
                                 <rect key="frame" x="223" y="169" width="81" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Фруктовое">
                                     <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="getFruitBeer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e25-97-mtf"/>
+                                    <action selector="fruitBeerButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e25-97-mtf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Страна происхождения:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skN-l9-lCF">
@@ -57,7 +59,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="getCountryOfOrigin:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="hqJ-CV-irB"/>
+                                    <action destination="BYZ-38-t0r" eventType="editingDidEnd" id="hqJ-CV-irB">
+                                        <string key="selector">countryOfOriginTextFieldDidChange
+:</string>
+                                    </action>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Цены:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-6V-Ut2">
@@ -73,7 +78,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="getPrice:" destination="BYZ-38-t0r" eventType="editingChanged" id="w7R-eL-jHX"/>
+                                    <action selector="priceTextDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="w7R-eL-jHX"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7x-a7-yp2">
@@ -84,7 +89,7 @@
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="getDrunk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zV0-N7-na0"/>
+                                    <action selector="buttonDrinkBeerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zV0-N7-na0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9b-Wc-RCj">
@@ -94,7 +99,7 @@
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="countProfit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8wp-G7-FvE"/>
+                                    <action selector="buttonCountProfitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8wp-G7-FvE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BEERBAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0G-df-0vy">
@@ -120,11 +125,12 @@
                                 <rect key="frame" x="233" y="53" width="61" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.61969721499999997" green="0.36445166779999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Темное">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="getDarkBeer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZcI-Sd-JDU"/>
+                                    <action selector="darkBeerButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZcI-Sd-JDU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,11 +142,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="countButton" destination="n9b-Wc-RCj" id="6fG-es-MEW"/>
-                        <outlet property="countryOfOrigin" destination="NlV-YP-sdD" id="A26-Nk-WM4"/>
-                        <outlet property="darkBeer" destination="kgA-TH-CJm" id="FgB-vB-dDW"/>
-                        <outlet property="fruitBeer" destination="hBB-ed-9jS" id="kag-ft-TtS"/>
-                        <outlet property="lightBeer" destination="paY-2m-asB" id="kCL-Ea-Tzr"/>
+                        <outlet property="countProfitButton" destination="n9b-Wc-RCj" id="6fG-es-MEW"/>
+                        <outlet property="countryOfOriginText" destination="NlV-YP-sdD" id="A26-Nk-WM4"/>
+                        <outlet property="darkBeerButton" destination="kgA-TH-CJm" id="FgB-vB-dDW"/>
+                        <outlet property="fruitBeerButton" destination="hBB-ed-9jS" id="kag-ft-TtS"/>
+                        <outlet property="lightBeerButton" destination="paY-2m-asB" id="kCL-Ea-Tzr"/>
                         <outlet property="priceText" destination="E73-KQ-vET" id="8Od-16-RTt"/>
                     </connections>
                 </viewController>

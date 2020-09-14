@@ -11,18 +11,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var darkBeer: UIButton!
-    @IBOutlet weak var beerImage: UIImageView!
+    @IBOutlet weak var darkBeerButton: UIButton!
     
-    @IBOutlet weak var lightBeer: UIButton!
+    @IBOutlet weak var lightBeerButton: UIButton!
     
-    @IBOutlet weak var fruitBeer: UIButton!
+    @IBOutlet weak var fruitBeerButton: UIButton!
     
-    @IBOutlet weak var countryOfOrigin: UITextField!
+    @IBOutlet weak var countryOfOriginText: UITextField!
     
     @IBOutlet weak var priceText: UITextField!
     
-    @IBOutlet weak var countButton: UIButton!
+    @IBOutlet weak var countProfitButton: UIButton!
     
     var beerSort = ""
     var beerPrice = 0
@@ -32,41 +31,45 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func getDarkBeer(_ sender: Any){
+    @IBAction func darkBeerButtonSelected(_ sender: Any){
         beerSort = "темное"
+        fruitBeerButton.isSelected = false
+        lightBeerButton.isSelected = false
+        darkBeerButton.isSelected = true
     }
     
-    @IBAction func getLightBeer(_ sender: Any) {
+    @IBAction func lightBeerButtonSelected(_ sender: Any) {
         beerSort = "светлое"
+        fruitBeerButton.isSelected = false
+        lightBeerButton.isSelected = true
+        darkBeerButton.isSelected = false
     }
     
-    @IBAction func getFruitBeer(_ sender: Any) {
+    @IBAction func fruitBeerButtonSelected(_ sender: Any) {
         beerSort = "фруктовое"
+        fruitBeerButton.isSelected = true
+        lightBeerButton.isSelected = false
+        darkBeerButton.isSelected = false
     }
     
-    @IBAction func getPrice(_ sender: Any) {
+    @IBAction func priceTextDidChange(_ sender: Any) {
         let text: String = priceText.text ?? ""
         beerPrice = Int(text) != nil ? Int(text)! : 0
     }
     
-    @IBAction func getCountryOfOrigin(_ sender: Any) {
+    @IBAction func countryOfOriginTextFieldDidChange
+(_ sender: Any) {
         
-        beerCountry = countryOfOrigin.text ?? ""
+        beerCountry = countryOfOriginText.text ?? ""
     }
     
-    @IBAction func getDrunk(_ sender: Any) {
+    @IBAction func buttonDrinkBeerPressed(_ sender: Any) {
         let beer = Beer(name: beerSort, price: beerPrice, countryOfOrigin: beerCountry, leftBeerCups: 10)
-        if beer.name == "фруктовое"{
-            BeerManager.shared.orderBeer(beer: beer, type: 1)
-        }else if beer.name == "темное"{
-            BeerManager.shared.orderBeer(beer: beer, type: 2)
-        }else{
-            BeerManager.shared.orderBeer(beer: beer, type: 3)
-        }
-        
+        BeerManager.shared.orderBeer(beer: beer)
+        print("Вы выпили \(beer.name) пиво из \(beer.countryOfOrigin) за \(beer.price)")
     }
     
-    @IBAction func countProfit(_ sender: Any) {
+    @IBAction func buttonCountProfitPressed(_ sender: Any) {
         BeerManager.shared.countProfit()
     }
 }

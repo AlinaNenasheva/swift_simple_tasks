@@ -1,10 +1,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+  
+    @IBOutlet weak var sizeTextField: UITextField!
     var x = 0
     var y = 0
-    var size = 7
+    var size = 0
     var squareViews: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +14,11 @@ class ViewController: UIViewController {
 
     @IBAction func fillButtonPressed(_ sender: Any) {
         createSquare()
+    }
+    
+    @IBAction func sizeTextFieldEditChanged(_ sender: Any) {
+        let text: String = sizeTextField.text ?? ""
+        size = Int(text) != nil ? Int(text)! : 0
     }
     
     func createSquare(){
@@ -24,7 +30,6 @@ class ViewController: UIViewController {
             x = 0
         }
         newSquareView.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
-//        view.addSubview(newView)
         squareViews.append(newSquareView)
         if CGFloat(y + size) < view.frame.height {
             createSquare()

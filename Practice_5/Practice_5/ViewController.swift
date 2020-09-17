@@ -11,26 +11,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK:- IBOutlets
+    
+    
     @IBOutlet weak var darkBeerButton: UIButton!
-    
     @IBOutlet weak var lightBeerButton: UIButton!
-    
     @IBOutlet weak var fruitBeerButton: UIButton!
-    
-  
     @IBOutlet weak var countryOfOriginText: UITextField!
-    
     @IBOutlet weak var priceText: UITextField!
-    
     @IBOutlet weak var countProfitButton: UIButton!
+    
+    // MARK:- Var
+    
     
     var beerSort = ""
     var beerPrice = 0
     var beerCountry = "unknown country"
     
+    // MARK:- Lifecycle functions
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK:- Flow functions
     
     @IBAction func darkBeerButtonSelected(_ sender: Any){
         beerSort = "dark"

@@ -14,7 +14,9 @@ class BeerManager{
     private let darkBeer = Beer(name: "dark", price: 0, countryOfOrigin: "", leftBeerCups: 10)
     private let lightBeer:Beer = Beer(name: "light", price: 0, countryOfOrigin: "", leftBeerCups: 10)
     private let fruitBeer:Beer = Beer(name: "fruit", price: 0, countryOfOrigin: "", leftBeerCups: 10)
-    private init() {}
+    
+    private init() {
+    }
     
     func orderBeer(beer: Beer){
         if fruitBeer.leftBeerCups != 0 && beer.name == "fruit" {

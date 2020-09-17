@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBAction func fillButtonPressed(_ sender: Any) {
         createSquare()
     }
-    
     @IBAction func sizeTextFieldEditChanged(_ sender: Any) {
         let text: String = sizeTextField.text ?? ""
         size = Int(text) != nil ? Int(text)! : 0

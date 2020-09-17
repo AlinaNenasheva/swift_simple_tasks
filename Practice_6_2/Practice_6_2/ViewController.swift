@@ -4,6 +4,8 @@ class ViewController: UIViewController {
     
     var x = 0
     var y = 0
+    var size = 7
+    var squareViews: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -14,16 +16,22 @@ class ViewController: UIViewController {
     }
     
     func createSquare(){
-        let squareView = UIView()
-        squareView.frame = CGRect(x: x, y: y, width: 100, height: 100)
-        x += 100
-        if CGFloat(x + 100) > squareView.frame.width {
-            y += 100
+        let newSquareView = UIView()
+        newSquareView.frame = CGRect(x: x, y: y, width: size, height: size)
+        x += size
+        if CGFloat(x + size) > view.frame.width {
+            y += size
+            x = 0
         }
-        squareView.backgroundColor = UIColor(red: CGFloat.random(in: 0...254), green: CGFloat.random(in: 0...254), blue: CGFloat.random(in: 0...254), alpha: 1)
-        if CGFloat(y + 100) < squareView.frame.height {
+        newSquareView.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
+//        view.addSubview(newView)
+        squareViews.append(newSquareView)
+        if CGFloat(y + size) < view.frame.height {
             createSquare()
         } else {
+            for tempView in squareViews{
+                view.addSubview(tempView)
+            }
             return
         }
     }

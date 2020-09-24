@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeerManager{
+class BeerManager {
     static let shared = BeerManager()
     private var profit = 0
     private let darkBeer = Beer(name: "dark", price: 0, countryOfOrigin: "", leftBeerCups: 10)
@@ -18,23 +18,30 @@ class BeerManager{
     private init() {
     }
     
-    func orderBeer(beer: Beer){
+    func orderBeer(beer: Beer) {
         if fruitBeer.leftBeerCups != 0 && beer.name == "fruit" {
             fruitBeer.leftBeerCups -= 1
             profit += beer.price
+            notificationMade(beer: beer)
         } else if darkBeer.leftBeerCups != 0 && beer.name == "dark" {
             darkBeer.leftBeerCups -= 1
             profit += beer.price
+            notificationMade(beer: beer)
         }
         else if lightBeer.leftBeerCups != 0 && beer.name == "light" {
             lightBeer.leftBeerCups -= 1
             profit += beer.price
+            notificationMade(beer: beer)
         } else {
             print("Oops, this beer is currently out of stock")
         }
     }
     
-    func countProfit(){
+    func notificationMade(beer: Beer) {
+        print("You drunk \(beer.name) beer from \(beer.countryOfOrigin) for \(beer.price) dollar(s)")
+    }
+    
+    func countProfit() {
         print("There are \(darkBeer.leftBeerCups) dark beer cups, \(lightBeer.leftBeerCups) light beer cups and \(fruitBeer.leftBeerCups) fruit beer cups.")
         darkBeer.leftBeerCups = 10
         lightBeer.leftBeerCups = 10

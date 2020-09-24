@@ -72,9 +72,6 @@ class ViewController: UIViewController {
         BeerManager.shared.orderBeer(beer: beer)
         if beer.name == "" {
             print("You must choose sort!")
-        } else {
-            print("You drunk \(beer.name) beer from \(beer.countryOfOrigin) for \(beer.price) dollar(s)")
-            
         }
     }
     

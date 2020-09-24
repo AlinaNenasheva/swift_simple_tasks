@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     let directionLabel = UILabel()
     
-    enum Direction{
+    enum Direction {
         case up
         case down
         case right
@@ -27,24 +27,24 @@ class ViewController: UIViewController {
         directionLabel.frame = CGRect(x: blueBallView.frame.width/2 - 13, y: blueBallView.frame.height/2 - 10, width: 50, height: 25)
         blueBallView.addSubview(directionLabel)
     }
-
+    
     @IBAction func upButtonPressed(_ sender: Any) {
-        toRightDirectionMove(Direction.up)
+        toRightDirectionMove(.up)
     }
-          
+    
     @IBAction func downButtonPressed(_ sender: Any) {
-        toRightDirectionMove(Direction.down)
+        toRightDirectionMove(.down)
     }
-
+    
     @IBAction func rightButtonPressed(_ sender: Any) {
-        toRightDirectionMove(Direction.right)
+        toRightDirectionMove(.right)
     }
     
     @IBAction func leftButtonPressed(_ sender: Any) {
-        toRightDirectionMove(Direction.left)
+        toRightDirectionMove(.left)
     }
     
-    private func toRightDirectionMove(_ direction: Direction){
+    private func toRightDirectionMove(_ direction: Direction) {
         switch direction {
         case .up:
             if blueBallView.frame.origin.y - 20 >= 0 {
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
                 directionLabel.text = "up"
             }
         case .down:
-            if blueBallView.frame.origin.y + blueBallView.frame.height + 20 <= view.frame.height - buttonView.frame.height {
+            if   blueBallView.frame.origin.y + blueBallView.frame.height + 20 <= view.frame.height - buttonView.frame.height {
                 blueBallView.frame.origin.y += 20
                 directionLabel.text = "down"
                 
@@ -69,5 +69,6 @@ class ViewController: UIViewController {
             }
         }
     }
+    
 }
 

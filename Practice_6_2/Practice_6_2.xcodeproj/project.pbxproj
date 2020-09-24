@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4848140525194AE300CC422A /* CubesDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848140425194AE300CC422A /* CubesDisplayViewController.swift */; };
 		489505662512A6600062D366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489505652512A6600062D366 /* AppDelegate.swift */; };
 		489505682512A6600062D366 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489505672512A6600062D366 /* SceneDelegate.swift */; };
 		4895056A2512A6600062D366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489505692512A6600062D366 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4848140425194AE300CC422A /* CubesDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubesDisplayViewController.swift; sourceTree = "<group>"; };
 		489505622512A6600062D366 /* Practice_6_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_6_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489505652512A6600062D366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489505672512A6600062D366 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				489505672512A6600062D366 /* SceneDelegate.swift */,
 				489505692512A6600062D366 /* ViewController.swift */,
 				4895056B2512A6600062D366 /* Main.storyboard */,
+				4848140425194AE300CC422A /* CubesDisplayViewController.swift */,
 				4895056E2512A6630062D366 /* Assets.xcassets */,
 				489505702512A6630062D366 /* LaunchScreen.storyboard */,
 				489505732512A6630062D366 /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4848140525194AE300CC422A /* CubesDisplayViewController.swift in Sources */,
 				4895056A2512A6600062D366 /* ViewController.swift in Sources */,
 				489505662512A6600062D366 /* AppDelegate.swift in Sources */,
 				489505682512A6600062D366 /* SceneDelegate.swift in Sources */,

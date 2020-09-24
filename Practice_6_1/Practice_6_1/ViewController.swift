@@ -20,10 +20,9 @@ class ViewController: UIViewController {
         
     }
 
-//    @IBAction func buttonPressed(_ sender: Any) {
-
-//
-//    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     @IBAction func buttonPressed(_ sender: Any) {
         let newCoordinates = (x: Int.random(in: 0..<Int(view.frame.width - blackSquareView.frame.width)), y: Int.random(in: 0..<Int(view.frame.height - blackSquareView.frame.height)))

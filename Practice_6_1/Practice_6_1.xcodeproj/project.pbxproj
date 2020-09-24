@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		484814032519423C00CC422A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484814022519423C00CC422A /* StartViewController.swift */; };
 		48BDED0C2510287900FE5B2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BDED0B2510287900FE5B2D /* AppDelegate.swift */; };
 		48BDED0E2510287900FE5B2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BDED0D2510287900FE5B2D /* SceneDelegate.swift */; };
 		48BDED102510287900FE5B2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BDED0F2510287900FE5B2D /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		484814022519423C00CC422A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		48BDED082510287900FE5B2D /* Practice_6_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_6_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BDED0B2510287900FE5B2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48BDED0D2510287900FE5B2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				48BDED0D2510287900FE5B2D /* SceneDelegate.swift */,
 				48BDED0F2510287900FE5B2D /* ViewController.swift */,
 				48BDED112510287900FE5B2D /* Main.storyboard */,
+				484814022519423C00CC422A /* StartViewController.swift */,
 				48BDED142510288000FE5B2D /* Assets.xcassets */,
 				48BDED162510288000FE5B2D /* LaunchScreen.storyboard */,
 				48BDED192510288000FE5B2D /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48BDED102510287900FE5B2D /* ViewController.swift in Sources */,
+				484814032519423C00CC422A /* StartViewController.swift in Sources */,
 				48BDED0C2510287900FE5B2D /* AppDelegate.swift in Sources */,
 				48BDED0E2510287900FE5B2D /* SceneDelegate.swift in Sources */,
 			);

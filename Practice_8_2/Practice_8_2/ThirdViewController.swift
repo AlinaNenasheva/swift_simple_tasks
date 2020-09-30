@@ -21,7 +21,7 @@ class ThirdViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: String(describing: ForthViewController.self)) as! ForthViewController
         viewController.country = country
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     /*
     // MARK: - Navigation

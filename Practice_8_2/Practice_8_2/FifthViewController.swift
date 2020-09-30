@@ -27,7 +27,10 @@ class FifthViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func goBackButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

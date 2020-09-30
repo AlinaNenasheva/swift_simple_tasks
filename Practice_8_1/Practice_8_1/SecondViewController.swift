@@ -22,17 +22,7 @@ class SecondViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: String(describing: ThirdViewController.self)) as! ThirdViewController
         viewController.text = text
         viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

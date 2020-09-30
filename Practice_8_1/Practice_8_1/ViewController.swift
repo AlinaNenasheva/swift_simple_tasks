@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: String(describing: SecondViewController.self)) as! SecondViewController
         viewController.text = greetingLabel.text!
         viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

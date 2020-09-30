@@ -22,7 +22,7 @@ class ForthViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: String(describing: FifthViewController.self)) as! FifthViewController
         viewController.country = country
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     /*
     // MARK: - Navigation

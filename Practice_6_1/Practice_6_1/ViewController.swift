@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         blackSquareView.layer.cornerRadius = blackSquareView.frame.width/2
         blackSquareView.layer.masksToBounds = true
 
@@ -21,7 +22,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true)
+        navigationController?.popToRootViewController(animated: true)
+
     }
     
     @IBAction func buttonPressed(_ sender: Any) {

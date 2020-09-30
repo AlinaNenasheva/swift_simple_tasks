@@ -22,7 +22,7 @@ class ForthViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: String(describing: FifthViewController.self)) as! FifthViewController
         viewController.finalGreetingLabel.text = text
         viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     /*
     // MARK: - Navigation

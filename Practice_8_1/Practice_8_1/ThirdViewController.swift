@@ -21,7 +21,7 @@ class ThirdViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: String(describing: ForthViewController.self)) as! ForthViewController
         viewController.text = text
         viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     /*

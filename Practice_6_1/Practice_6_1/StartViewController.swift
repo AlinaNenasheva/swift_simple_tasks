@@ -18,7 +18,10 @@ class StartViewController: UIViewController {
     
 
     @IBAction func startButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "showPawTapGame", sender: self)
+        let stroyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = stroyboard.instantiateViewController(identifier: String(describing: ViewController.self))
+        navigationController?.pushViewController(viewController, animated: true)
+
     }
     /*
     // MARK: - Navigation

@@ -26,6 +26,33 @@ class ViewController: UIViewController {
         blueBallView.layer.cornerRadius = blueBallView.frame.width/2
         directionLabel.frame = CGRect(x: blueBallView.frame.width/2 - 13, y: blueBallView.frame.height/2 - 10, width: 50, height: 25)
         blueBallView.addSubview(directionLabel)
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
+        leftSwipeGesture.direction = .left
+        let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
+        rightSwipeGesture.direction = .right
+        let upSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
+        upSwipeGesture.direction = .up
+        let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
+        rightSwipeGesture.direction = .down
+        view.addGestureRecognizer(upSwipeGesture)
+        view.addGestureRecognizer(downSwipeGesture)
+        view.addGestureRecognizer(leftSwipeGesture)
+        view.addGestureRecognizer(rightSwipeGesture)
+    }
+    
+    @objc func processSwipe(_ swipeGesture: UISwipeGestureRecognizer){
+        switch swipeGesture.direction{
+        case .left:
+            toRightDirectionMove(.left)
+        case .right:
+            toRightDirectionMove(.right)
+        case .up:
+            toRightDirectionMove(.up)
+        case .down:
+            toRightDirectionMove(.down)
+        default:
+            print("")
+        }
     }
     
     @IBAction func upButtonPressed(_ sender: Any) {

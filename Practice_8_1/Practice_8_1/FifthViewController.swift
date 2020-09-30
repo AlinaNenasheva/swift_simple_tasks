@@ -15,11 +15,14 @@ class FifthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(finalGreetingLabel)
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func goBackButtonPressed(_ sender: Any) {
+         navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

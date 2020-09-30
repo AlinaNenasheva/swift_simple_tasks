@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: String(describing: SecondViewController.self)) as! SecondViewController
         viewController.country = country
-        self.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
+
     }
     
 

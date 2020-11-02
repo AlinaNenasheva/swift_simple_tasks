@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYX-fE-izg">
-                                <rect key="frame" x="40" y="88" width="335" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYX-fE-izg">
+                                <rect key="frame" x="39" y="88" width="336" height="31"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Car Race Simulator">
                                         <attributes>
@@ -27,16 +26,17 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🚕 🚘 🚗 🚓 🚛 🚑 🚙 🏎  🚚 🚜 🚌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efq-od-yBA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="🚕 🚘 🚗 🚓 🚛 🚑 🚙 🏎  🚚 🚜 🚌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efq-od-yBA">
                                 <rect key="frame" x="40" y="114" width="335" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7MC-jp-pWY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BT-gt-LjH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BT-gt-LjH">
                                 <rect key="frame" x="168" y="271" width="76" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Menu:">
                                         <attributes>
@@ -46,69 +46,107 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-hW-7Bu">
-                                <rect key="frame" x="166" y="369" width="82" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Start">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="17" name="Courier"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DK1-bv-ddk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwD-78-Ran">
-                                <rect key="frame" x="166" y="498" width="82" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Records">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="17" name="Courier"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="recordsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgj-gF-ytr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBb-9x-Yw3">
-                                <rect key="frame" x="166" y="434" width="82" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Settings">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="17" name="Courier"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQL-9N-ZwQ"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLH-d5-ZSm">
+                                <rect key="frame" x="87" y="341" width="240" height="214"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-hW-7Bu">
+                                        <rect key="frame" x="79" y="93" width="82" height="29"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="Ltw-tY-RV6"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Settings">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="17" name="Courier"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DK1-bv-ddk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwD-78-Ran">
+                                        <rect key="frame" x="79" y="155" width="82" height="27"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Records">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="17" name="Courier"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="recordsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgj-gF-ytr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBb-9x-Yw3">
+                                        <rect key="frame" x="79" y="31" width="82" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Start">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="17" name="Courier"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQL-9N-ZwQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="lwD-78-Ran" secondAttribute="height" multiplier="7.92593" id="9df-wq-Jvb"/>
+                                    <constraint firstItem="lwD-78-Ran" firstAttribute="top" secondItem="i9b-hW-7Bu" secondAttribute="bottom" constant="33" id="AZb-N4-Jrh"/>
+                                    <constraint firstItem="i9b-hW-7Bu" firstAttribute="top" secondItem="VBb-9x-Yw3" secondAttribute="bottom" constant="33" id="LMg-Fp-9ws"/>
+                                    <constraint firstItem="lwD-78-Ran" firstAttribute="leading" secondItem="i9b-hW-7Bu" secondAttribute="leading" id="MZK-zH-TJp"/>
+                                    <constraint firstItem="lwD-78-Ran" firstAttribute="trailing" secondItem="i9b-hW-7Bu" secondAttribute="trailing" id="TiW-Zl-Dxh"/>
+                                    <constraint firstItem="lwD-78-Ran" firstAttribute="leading" secondItem="VBb-9x-Yw3" secondAttribute="leading" id="U5h-ug-igr"/>
+                                    <constraint firstItem="VBb-9x-Yw3" firstAttribute="top" secondItem="gLH-d5-ZSm" secondAttribute="top" constant="31" id="VWB-1e-RiM"/>
+                                    <constraint firstItem="i9b-hW-7Bu" firstAttribute="width" secondItem="VBb-9x-Yw3" secondAttribute="width" id="kJJ-x6-IQA"/>
+                                    <constraint firstItem="VBb-9x-Yw3" firstAttribute="leading" secondItem="gLH-d5-ZSm" secondAttribute="leading" constant="79" id="rmf-5D-Pfx"/>
+                                    <constraint firstAttribute="height" secondItem="VBb-9x-Yw3" secondAttribute="height" multiplier="7.37931" id="zec-va-Xzh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gLH-d5-ZSm" firstAttribute="centerX" secondItem="efq-od-yBA" secondAttribute="centerX" id="5wO-Tf-dKL"/>
+                            <constraint firstItem="gLH-d5-ZSm" firstAttribute="top" secondItem="0BT-gt-LjH" secondAttribute="bottom" constant="45" id="8kb-OO-U4d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XYX-fE-izg" secondAttribute="trailing" constant="39" id="A8l-vD-jch"/>
+                            <constraint firstItem="XYX-fE-izg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G1V-WO-CCp"/>
+                            <constraint firstItem="gLH-d5-ZSm" firstAttribute="centerX" secondItem="XYX-fE-izg" secondAttribute="centerX" id="Led-xG-rRU"/>
+                            <constraint firstItem="0BT-gt-LjH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="271" id="NZR-kh-gpZ"/>
+                            <constraint firstItem="gLH-d5-ZSm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="SdY-3f-Flu"/>
+                            <constraint firstItem="gLH-d5-ZSm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uwk-dY-usl"/>
+                            <constraint firstItem="efq-od-yBA" firstAttribute="leading" secondItem="XYX-fE-izg" secondAttribute="leading" id="cWT-Il-xiU"/>
+                            <constraint firstItem="gLH-d5-ZSm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZ5-z2-fcq"/>
+                            <constraint firstItem="efq-od-yBA" firstAttribute="leading" secondItem="XYX-fE-izg" secondAttribute="leading" id="hcj-MG-xVI"/>
+                            <constraint firstItem="0BT-gt-LjH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="168" id="iUO-jx-1ok"/>
+                            <constraint firstItem="efq-od-yBA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="s3D-TJ-wkO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="suX-Ch-4yy"/>
+                    <connections>
+                        <outlet property="menuView" destination="gLH-d5-ZSm" id="vnF-G7-OnK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="130"/>
+            <point key="canvasLocation" x="2.8985507246376816" y="129.91071428571428"/>
         </scene>
         <!--Records View Controller-->
         <scene sceneID="43u-Ia-Ofy">
@@ -155,10 +193,10 @@
             </objects>
             <point key="canvasLocation" x="-894" y="130"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="qbp-jh-hgV">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="XvW-U8-wru" customClass="GameViewController" customModule="CarRace_Simulator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="XvW-U8-wru" customClass="SettingsViewController" customModule="CarRace_Simulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWW-q2-1uH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,27 +213,177 @@
                                     <action selector="backToMenuButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="UQ9-bc-2g2"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPQ-JM-hpm">
+                                <rect key="frame" x="20" y="188" width="374" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhL-RQ-NZJ">
+                                        <rect key="frame" x="9" y="8" width="46" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="brown">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.61969721499999997" green="0.36445166779999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="15" name="Courier"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="brownColorButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="hr0-Wj-Z25"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOg-Gl-3d7">
+                                        <rect key="frame" x="164" y="8" width="46" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="green">
+                                                    <attributes>
+                                                        <color key="NSColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="15" name="Courier"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="greenColorButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="tOv-go-SV8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-TV-lcp">
+                                        <rect key="frame" x="325" y="8" width="37" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="blue">
+                                                    <attributes>
+                                                        <font key="NSFont" size="15" name="Courier"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="blueColorButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="TfI-Lh-YNU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PZ-i1-Fa1">
+                                <rect key="frame" x="20" y="148" width="174" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Choose car color:">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Courier"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter racer name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCT-gS-9Fi">
+                                <rect key="frame" x="20" y="297" width="183" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hda-p0-9gM">
+                                <rect key="frame" x="220" y="290" width="174" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="racerNameEditingChanged:" destination="XvW-U8-wru" eventType="editingChanged" id="2Iq-v8-xhB"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-jI-PNj">
+                                <rect key="frame" x="24" y="402" width="164" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Choose obstacle:">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Courier"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-mI-RQ7">
+                                <rect key="frame" x="20" y="443" width="374" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoR-zy-WBx">
+                                        <rect key="frame" x="14" y="8" width="37" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                        <state key="normal" title="rock">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rockButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="BEd-pE-hui"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7c-6I-jZB">
+                                        <rect key="frame" x="164" y="8" width="46" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                        <state key="normal" title="grass">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="grassButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="0Dp-eJ-6mf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbs-fK-GUb">
+                                        <rect key="frame" x="329" y="8" width="30" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                        <state key="normal" title="log">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logButtonPressed:" destination="XvW-U8-wru" eventType="touchUpInside" id="fug-WW-W4r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZZV-dU-yuV"/>
                     </view>
+                    <connections>
+                        <outlet property="colorPickerView" destination="LPQ-JM-hpm" id="2Y4-eC-7sv"/>
+                        <outlet property="obstaclePickerView" destination="w9a-mI-RQ7" id="tht-qu-vk5"/>
+                        <outlet property="racerNameTextField" destination="hda-p0-9gM" id="b2d-vN-3db"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okq-Wl-cDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="130"/>
+            <point key="canvasLocation" x="876.81159420289862" y="129.91071428571428"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="8fV-h4-olS">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="d6S-Q9-y97" customClass="SettingsViewController" customModule="CarRace_Simulator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="d6S-Q9-y97" customClass="GameViewController" customModule="CarRace_Simulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NFj-XQ-MWl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUK-YE-5VA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundgrassimage" translatesAutoresizingMaskIntoConstraints="NO" id="KmG-Q9-Wot">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUK-YE-5VA">
                                 <rect key="frame" x="20" y="44" width="36" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="Dgg-hJ-9se"/>
+                                    <constraint firstAttribute="height" constant="36" id="iCW-Jw-uum"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="&lt;&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,14 +392,38 @@
                                     <action selector="backToMenuButtonPressed:" destination="d6S-Q9-y97" eventType="touchUpInside" id="aSq-eT-pcs"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundgrassimage" translatesAutoresizingMaskIntoConstraints="NO" id="dSI-dG-x1h">
+                                <rect key="frame" x="344" y="0.0" width="70" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0H1-7A-3Mk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RUK-YE-5VA" firstAttribute="top" secondItem="qaw-a6-EsJ" secondAttribute="top" id="ADM-Fq-0jy"/>
+                            <constraint firstAttribute="width" secondItem="KmG-Q9-Wot" secondAttribute="width" multiplier="5.91429" id="Be3-De-ZLu"/>
+                            <constraint firstAttribute="bottom" secondItem="KmG-Q9-Wot" secondAttribute="bottom" id="D2b-nn-9th"/>
+                            <constraint firstItem="KmG-Q9-Wot" firstAttribute="top" secondItem="NFj-XQ-MWl" secondAttribute="top" id="PpG-zC-Ay7"/>
+                            <constraint firstAttribute="bottom" secondItem="dSI-dG-x1h" secondAttribute="bottom" id="RlI-UL-tFc"/>
+                            <constraint firstItem="RUK-YE-5VA" firstAttribute="leading" secondItem="qaw-a6-EsJ" secondAttribute="leading" constant="20" id="qvA-47-1yc"/>
+                            <constraint firstItem="dSI-dG-x1h" firstAttribute="top" secondItem="NFj-XQ-MWl" secondAttribute="top" id="v0H-Ym-sBt"/>
+                            <constraint firstItem="KmG-Q9-Wot" firstAttribute="leading" secondItem="NFj-XQ-MWl" secondAttribute="leading" id="z1Y-cQ-eCJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dSI-dG-x1h" secondAttribute="trailing" id="z4p-RB-kQa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qaw-a6-EsJ"/>
                     </view>
+                    <connections>
+                        <outlet property="leftGrassImageView" destination="KmG-Q9-Wot" id="j17-mT-hxb"/>
+                        <outlet property="rightGrassImageView" destination="dSI-dG-x1h" id="A4e-WE-LFC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKG-sO-9NG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2522" y="130"/>
+            <point key="canvasLocation" x="2521.739130434783" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundgrassimage" width="800" height="533"/>
+    </resources>
 </document>

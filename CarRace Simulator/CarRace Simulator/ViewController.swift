@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var menuView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        menuView.layer.cornerRadius = 10
+        menuView.setShadow()
+        menuView.setGradient(colors: [UIColor.red.cgColor, UIColor.gray.cgColor], startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         // Do any additional setup after loading the view.
     }
 

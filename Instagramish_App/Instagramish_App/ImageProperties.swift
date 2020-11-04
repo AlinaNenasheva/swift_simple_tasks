@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ImageProperties{
+class ImageProperties: Codable{
     var like: Bool = false
     var comments = [String]()
 }

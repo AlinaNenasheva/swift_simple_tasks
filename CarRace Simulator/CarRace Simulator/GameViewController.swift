@@ -8,7 +8,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var leftGrassImageView: UIImageView!
     @IBOutlet weak var rightGrassImageView: UIImageView!
     var settings = Settings()
-    var inProccess = true
+    var inProccess = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,6 @@ class GameViewController: UIViewController {
     }
     
     func animateObject() {
-        if inProccess {
         if Bool.random() {
             self.obstacleImage = self.generateObstacle()
             UIView.animate(withDuration: 2, animations: {
@@ -67,7 +66,10 @@ class GameViewController: UIViewController {
                 self.animateObject()
             }
         } else {
-            animateObject()
+            if inProccess {
+                animateObject()
+            } else {
+                return
             }
         }
     }

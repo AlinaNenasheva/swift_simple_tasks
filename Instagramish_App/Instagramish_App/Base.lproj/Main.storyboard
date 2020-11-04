@@ -36,7 +36,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="leaveCommentTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="2vL-8e-78q"/>
+                                                    <action selector="leaveCommentTextFieldEditDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="pCc-RQ-jlM"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkr-VZ-XRD">
@@ -48,6 +48,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="heart" catalog="system"/>
+                                                <state key="selected" image="heart.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="likeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CF1-LS-2YB"/>
                                                 </connections>
@@ -100,5 +101,6 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
     </resources>
 </document>

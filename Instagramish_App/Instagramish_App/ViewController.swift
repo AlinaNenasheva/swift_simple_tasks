@@ -14,20 +14,27 @@ class ViewController: UIViewController {
     var imageOne : UIImageView!
     var imageTwo : UIImageView!
     @IBOutlet weak var commentSectionTextView: UITextView!
+    typealias Pictures = [String : ImageProperties]
     var pictures = ["image1": ImageProperties(), "image2": ImageProperties(), "image3": ImageProperties(), "image4": ImageProperties()]
-    var imgArr = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4")]
+    var imgArr = [UIImage]()
     
     @IBOutlet weak var leaveCommentTextField: UITextField!
     var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imageOne = UIImageView(frame: CGRect(x: -view.frame.width, y: 0, width: view.frame.width, height: view.frame.height - likeButton.frame.origin.y))
-        imageTwo = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - likeButton.frame.origin.y))
+        for picture in pictures.keys {
+            imgArr.append(UIImage(named: picture)!)
+        }
+        imageOne = UIImageView(frame: CGRect(x: -view.frame.width, y: 0, width: view.frame.width, height: likeButton.frame.origin.y - 150))
+        imageTwo = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: likeButton.frame.origin.y - 150))
         imageTwo.image = UIImage(named: "image1")
-        imageOne.contentMode = .scaleAspectFill
-        imageTwo.contentMode = .scaleAspectFill
+        imageOne.layer.cornerRadius = 10
+        imageTwo.layer.cornerRadius = 10
+        imageOne.setShadow()
+        imageTwo.setShadow()
+        imageOne.contentMode = .scaleToFill
+        imageTwo.contentMode = .scaleToFill
         view.addSubview(imageOne)
         view.addSubview(imageTwo)
         
@@ -39,11 +46,18 @@ class ViewController: UIViewController {
         rightSwipeGesture.direction = .right
         scrollView.addGestureRecognizer(rightSwipeGesture)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapOnContentView(_gesture:)))
+        scrollView.addGestureRecognizer(tapGestureRecognizer)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
+    @objc func handleTapOnContentView (_gesture: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
     @objc func handleKeyboardDidShow(_ notification: Notification) {
         if let keyboard = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect {
             let bottomInset = keyboard.height
@@ -138,10 +152,12 @@ class ViewController: UIViewController {
         switch gesture.direction {
         case .right:
             swipeRight()
+            clearCommentSection()
             uploadComments()
             checkLikeButton()
         case .left:
             swipeLeft()
+            clearCommentSection()
             uploadComments()
             checkLikeButton()
         default:
@@ -154,9 +170,7 @@ class ViewController: UIViewController {
     }
     
     func checkLikeButton() {
-        let imageName = "image\(currentPage + 1)"
-        typealias like = pictures[imageName].like
-        if like {
+        if pictures["image\(currentPage + 1)"]?.like ?? false {
             likeButton.isSelected = true
         } else {
             likeButton.isSelected = false
@@ -164,34 +178,38 @@ class ViewController: UIViewController {
     }
     
     func uploadComments() {
-        let imageName = "image\(currentPage + 1)"
-        typealias comments = pictures[imageName].comments
+        if let comments = pictures["image\(currentPage + 1)"]?.comments {
         for comment in comments {
-            if commentSectionTextView.text != "" {
+            if commentSectionTextView.text == "" {
                 commentSectionTextView.text += comment
             } else {
-                commentSectionTextView.text += """
-
-                \(comment)
-                """
+                commentSectionTextView.text += "\n\n\(comment)"
+            }
             }
         }
     }
     
+    func clearCommentSection() {
+        commentSectionTextView.text = ""
+    }
+    
     @IBAction func likeButtonPressed(_ sender: Any) {
-         likeButton.isSelected = !likeButton.isSelected
+        likeButton.isSelected = !likeButton.isSelected
+        let imageName = "image\(currentPage + 1)"
         if likeButton.isSelected {
-           let imageName = "image\(currentPage + 1)"
-            pictures[imageName].like = true
+            pictures[imageName]!.like = true
         } else {
-            pictures[imageName].like = false
+            pictures[imageName]!.like = false
         }
     }
     
-    @IBAction func leaveCommentTextFieldEditingChanged(_ sender: Any) {
-        let imageName = "image\(currentPage + 1)"
-        typealias comments = pictures[imageName].comments
-        comments.append(leaveCommentTextField.text)
+    @IBAction func leaveCommentTextFieldEditDidEnd(_ sender: Any) {
+        if leaveCommentTextField.text != "" {
+            pictures["image\(currentPage + 1)"]?.comments.append(leaveCommentTextField.text!)
+            clearCommentSection()
+            uploadComments()
+            leaveCommentTextField.text = ""
+        }
 
     }
 }

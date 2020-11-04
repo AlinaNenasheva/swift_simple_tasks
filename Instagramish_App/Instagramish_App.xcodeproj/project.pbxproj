@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4850EA9F2553591800C7F411 /* View+Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850EA9E2553591800C7F411 /* View+Shadows.swift */; };
 		48E644BE25516CDD0066CA42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E644BD25516CDD0066CA42 /* AppDelegate.swift */; };
 		48E644C025516CDD0066CA42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E644BF25516CDD0066CA42 /* SceneDelegate.swift */; };
 		48E644C225516CDD0066CA42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E644C125516CDD0066CA42 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4850EA9E2553591800C7F411 /* View+Shadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadows.swift"; sourceTree = "<group>"; };
 		48E644BA25516CDD0066CA42 /* Instagramish_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagramish_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E644BD25516CDD0066CA42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E644BF25516CDD0066CA42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				48E644BD25516CDD0066CA42 /* AppDelegate.swift */,
 				48E644BF25516CDD0066CA42 /* SceneDelegate.swift */,
 				48E644C125516CDD0066CA42 /* ViewController.swift */,
+				4850EA9E2553591800C7F411 /* View+Shadows.swift */,
 				48E644ED255170CA0066CA42 /* ImageProperties.swift */,
 				48E644C325516CDD0066CA42 /* Main.storyboard */,
 				48E644C625516CDF0066CA42 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48E644EE255170CA0066CA42 /* ImageProperties.swift in Sources */,
+				4850EA9F2553591800C7F411 /* View+Shadows.swift in Sources */,
 				48E644C225516CDD0066CA42 /* ViewController.swift in Sources */,
 				48E644BE25516CDD0066CA42 /* AppDelegate.swift in Sources */,
 				48E644C025516CDD0066CA42 /* SceneDelegate.swift in Sources */,

@@ -8,12 +8,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var leftGrassImageView: UIImageView!
     @IBOutlet weak var rightGrassImageView: UIImageView!
     var settings = Settings()
+    var inProccess = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         retriveSettings()
         navigationController?.setNavigationBarHidden(true, animated: true)
-        roadImage = UIImageView(frame: CGRect(x: leftGrassImageView.frame.width, y: -500, width: view.frame.width - leftGrassImageView.frame.width - rightGrassImageView.frame.width, height: view.frame.height + 500))
+        roadImage = UIImageView(frame: CGRect(x: leftGrassImageView.frame.width, y: -600, width: view.frame.width - leftGrassImageView.frame.width - rightGrassImageView.frame.width, height: view.frame.height + 600))
         roadImage.image = UIImage(named: "roadimage")
         view.addSubview(roadImage)
         carImage = UIImageView(frame: CGRect(x: leftGrassImageView.frame.width + roadImage.frame.width/2 - 10, y: view.frame.height - 210, width: roadImage.frame.width/2, height: 200))
@@ -44,6 +45,9 @@ class GameViewController: UIViewController {
         } else {
             animateObject()
         }
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
+            self.inProccess = self.checkCrush()
+        }
         UIView.animate(withDuration: 0.25, animations: {
             self.roadImage.frame.origin.y = self.view.frame.origin.y
         }) { (_) in
@@ -53,35 +57,39 @@ class GameViewController: UIViewController {
     }
     
     func animateObject() {
+        if inProccess {
         if Bool.random() {
-                   self.obstacleImage = self.generateObstacle()
-                   UIView.animate(withDuration: 2, animations: {
-                    if self.checkCrush() {
-                        self.roadImage.layer.removeAllAnimations()
-                        return
-                    }
-                        self.obstacleImage.frame.origin.y = self.view.frame.height + 40
-                   }) { (_) in
-                       self.animateObject()
-                   }
+            self.obstacleImage = self.generateObstacle()
+            UIView.animate(withDuration: 2, animations: {
+                
+                self.obstacleImage.frame.origin.y = self.view.frame.height + 40
+            }) { (_) in
+                self.animateObject()
+            }
         } else {
             animateObject()
+            }
         }
     }
     
-    func checkCrush() -> Bool{
-        if self.obstacleImage.frame.origin.x + 40 == self.carImage.frame.origin.x && self.obstacleImage.frame.origin.y + 40 == self.carImage.frame.origin.y{
+    func checkCrush() -> Bool {
+        if self.obstacleImage.frame.intersects(self.carImage.frame) {
+            return false
+        } else {
             return true
         }
-        return false
     }
     
     func animateRoad(y: CGFloat) {
+        if inProccess {
         UIView.animate(withDuration: 0.25, animations: {
             self.roadImage.frame.origin.y = self.view.frame.origin.y
         }) { (_) in
             self.roadImage.frame.origin.y = y
             self.animateRoad(y: y)
+            }
+        } else {
+            showAlert()
         }
     }
     
@@ -132,12 +140,14 @@ class GameViewController: UIViewController {
          case .left:
             carImage.frame.origin.x -= 120
             if carImage.frame.origin.x < roadImage.frame.origin.x {
+                carImage.contentMode = .scaleAspectFill
                 carImage.image = UIImage(named: "explosionimage")
                 showAlert()
             }
          case .right:
             carImage.frame.origin.x += 120
             if carImage.frame.origin.x + carImage.frame.width > roadImage.frame.origin.x + roadImage.frame.width {
+                carImage.contentMode = .scaleAspectFill
                 carImage.image = UIImage(named: "explosionimage")
                 showAlert()
             }

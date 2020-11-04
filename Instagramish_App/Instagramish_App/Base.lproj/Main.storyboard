@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagramish_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvS-yd-r0Q">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-l1-o34">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xwq-sC-OVV">
+                                                <rect key="frame" x="20" y="558" width="374" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="z6t-DS-7UL"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Leave a comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05S-hC-Efw">
+                                                <rect key="frame" x="20" y="768" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="leaveCommentTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="2vL-8e-78q"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkr-VZ-XRD">
+                                                <rect key="frame" x="344" y="488" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="KDu-lU-HfQ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="XJL-lS-DiE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="heart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="likeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CF1-LS-2YB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="05S-hC-Efw" secondAttribute="trailing" constant="20" id="D9u-dX-6KY"/>
+                                            <constraint firstItem="05S-hC-Efw" firstAttribute="leading" secondItem="VDx-l1-o34" secondAttribute="leading" constant="20" id="DUB-Ob-XxP"/>
+                                            <constraint firstItem="05S-hC-Efw" firstAttribute="top" secondItem="xwq-sC-OVV" secondAttribute="bottom" constant="10" id="cHb-Vl-rPX"/>
+                                            <constraint firstAttribute="bottom" secondItem="xwq-sC-OVV" secondAttribute="bottom" constant="60" id="kkQ-Bl-Y5q"/>
+                                            <constraint firstItem="xwq-sC-OVV" firstAttribute="top" secondItem="xkr-VZ-XRD" secondAttribute="bottom" constant="20" id="oMS-4Y-Zkp"/>
+                                            <constraint firstItem="xwq-sC-OVV" firstAttribute="leading" secondItem="VDx-l1-o34" secondAttribute="leading" constant="20" id="oT1-vN-LN0"/>
+                                            <constraint firstAttribute="trailing" secondItem="xkr-VZ-XRD" secondAttribute="trailing" constant="20" id="vFs-cz-Dsa"/>
+                                            <constraint firstAttribute="trailing" secondItem="xwq-sC-OVV" secondAttribute="trailing" constant="20" id="yeS-GO-dPE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VDx-l1-o34" secondAttribute="trailing" id="IDf-bF-XyB"/>
+                                    <constraint firstItem="VDx-l1-o34" firstAttribute="leading" secondItem="jvS-yd-r0Q" secondAttribute="leading" id="QO4-4Y-h4h"/>
+                                    <constraint firstItem="VDx-l1-o34" firstAttribute="top" secondItem="jvS-yd-r0Q" secondAttribute="top" id="YDa-LV-v1V"/>
+                                    <constraint firstAttribute="bottom" secondItem="VDx-l1-o34" secondAttribute="bottom" id="YPX-oK-yM8"/>
+                                    <constraint firstItem="VDx-l1-o34" firstAttribute="width" secondItem="jvS-yd-r0Q" secondAttribute="width" id="ezw-tB-W4C"/>
+                                    <constraint firstItem="VDx-l1-o34" firstAttribute="height" secondItem="jvS-yd-r0Q" secondAttribute="height" id="lMe-Sc-kVm"/>
+                                    <constraint firstAttribute="height" constant="818" id="tWm-Mp-HoG"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jvS-yd-r0Q" secondAttribute="trailing" id="1W2-wK-Vru"/>
+                            <constraint firstItem="jvS-yd-r0Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1pm-Jw-e1r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jvS-yd-r0Q" secondAttribute="bottom" id="KlN-WD-zGL"/>
+                            <constraint firstItem="jvS-yd-r0Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ekZ-DO-7oj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentSectionTextView" destination="xwq-sC-OVV" id="rUZ-kT-taA"/>
+                        <outlet property="leaveCommentTextField" destination="05S-hC-Efw" id="2qF-hv-Y9Y"/>
+                        <outlet property="likeButton" destination="xkr-VZ-XRD" id="Wda-62-H68"/>
+                        <outlet property="scrollView" destination="jvS-yd-r0Q" id="yQD-Pk-rUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
+</document>

@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var imageOne : UIImageView!
     var imageTwo : UIImageView!
     @IBOutlet weak var commentSectionTextView: UITextView!
-    typealias Pictures = [String : ImageProperties]
     var pictures = ["image1": ImageProperties(), "image2": ImageProperties(), "image3": ImageProperties(), "image4": ImageProperties()]
     var imgArr = [UIImage]()
     
@@ -59,7 +58,7 @@ class ViewController: UIViewController {
     }
     
     @objc func handleKeyboardDidShow(_ notification: Notification) {
-        if let keyboard = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect {
+        if let keyboard = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
             let bottomInset = keyboard.height
             let insets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
             scrollView.contentInset = insets
@@ -210,7 +209,30 @@ class ViewController: UIViewController {
             uploadComments()
             leaveCommentTextField.text = ""
         }
-
+    }
+    
+    func retriveInfo() {
+        if let data = UserDefaults.standard.value(forKey: "PropertiesKey") as? Data {
+            do{
+                let properties = try JSONDecoder().decode(ImageProperties.self, from: data)
+                for picture in pictures {
+                    picture.value = properties
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func saveInfo() {
+        for picture in pictures {
+        do{
+            let data = try JSONEncoder().encode(picture.value)
+            UserDefaults.standard.setValue(data, forKey: "PropertiesKey")
+        } catch {
+            print(error)
+        }
+        }
     }
 }
 

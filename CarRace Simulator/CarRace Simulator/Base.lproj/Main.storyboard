@@ -398,14 +398,27 @@
                                     <constraint firstAttribute="width" constant="70" id="0H1-7A-3Mk"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZ4-y9-RK4">
+                                <rect key="frame" x="354" y="54" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="gtj-Ud-X2C"/>
+                                    <constraint firstAttribute="height" constant="50" id="vGf-5o-Zbx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="RUK-YE-5VA" firstAttribute="top" secondItem="qaw-a6-EsJ" secondAttribute="top" id="ADM-Fq-0jy"/>
                             <constraint firstAttribute="width" secondItem="KmG-Q9-Wot" secondAttribute="width" multiplier="5.91429" id="Be3-De-ZLu"/>
                             <constraint firstAttribute="bottom" secondItem="KmG-Q9-Wot" secondAttribute="bottom" id="D2b-nn-9th"/>
+                            <constraint firstItem="qaw-a6-EsJ" firstAttribute="trailing" secondItem="MZ4-y9-RK4" secondAttribute="trailing" constant="10" id="MZO-py-3TE"/>
                             <constraint firstItem="KmG-Q9-Wot" firstAttribute="top" secondItem="NFj-XQ-MWl" secondAttribute="top" id="PpG-zC-Ay7"/>
                             <constraint firstAttribute="bottom" secondItem="dSI-dG-x1h" secondAttribute="bottom" id="RlI-UL-tFc"/>
+                            <constraint firstItem="MZ4-y9-RK4" firstAttribute="top" secondItem="qaw-a6-EsJ" secondAttribute="top" constant="10" id="WDF-e6-2G0"/>
                             <constraint firstItem="RUK-YE-5VA" firstAttribute="leading" secondItem="qaw-a6-EsJ" secondAttribute="leading" constant="20" id="qvA-47-1yc"/>
                             <constraint firstItem="dSI-dG-x1h" firstAttribute="top" secondItem="NFj-XQ-MWl" secondAttribute="top" id="v0H-Ym-sBt"/>
                             <constraint firstItem="KmG-Q9-Wot" firstAttribute="leading" secondItem="NFj-XQ-MWl" secondAttribute="leading" id="z1Y-cQ-eCJ"/>
@@ -416,6 +429,7 @@
                     <connections>
                         <outlet property="leftGrassImageView" destination="KmG-Q9-Wot" id="j17-mT-hxb"/>
                         <outlet property="rightGrassImageView" destination="dSI-dG-x1h" id="A4e-WE-LFC"/>
+                        <outlet property="scoreLabel" destination="MZ4-y9-RK4" id="luw-cH-AqL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKG-sO-9NG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

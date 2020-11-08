@@ -4,11 +4,13 @@ class GameViewController: UIViewController {
 
     var roadImage: UIImageView!
     var carImage: UIImageView!
-    var obstacleImage: UIImageView!
+    var obstacleImages: [UIImageView]!
     @IBOutlet weak var leftGrassImageView: UIImageView!
     @IBOutlet weak var rightGrassImageView: UIImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
     var settings = Settings()
-    var inProccess = false
+    var inProccess = true
+    var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +37,11 @@ class GameViewController: UIViewController {
         leftSwipeGesture.direction = .left
         view.addGestureRecognizer(leftSwipeGesture)
         let y = roadImage.frame.origin.y
-        if Bool.random() {
-            self.obstacleImage = self.generateObstacle()
-            UIView.animate(withDuration: 2, animations: {
-                 self.obstacleImage.frame.origin.y = self.view.frame.height + 40
-            }) { (_) in
-                self.animateObject()
-            }
-        } else {
-            animateObject()
+        obstacleImages.append(self.generateObstacle())
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
+            self.animateObject(self.obstacleImages.last!)
         }
+        createObjects()
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
             self.inProccess = self.checkCrush()
         }
@@ -56,18 +53,23 @@ class GameViewController: UIViewController {
         }
     }
     
-    func animateObject() {
-        if Bool.random() {
-            self.obstacleImage = self.generateObstacle()
-            UIView.animate(withDuration: 2, animations: {
-                
-                self.obstacleImage.frame.origin.y = self.view.frame.height + 40
+    func createObjects() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
+            self.obstacleImages.append(self.generateObstacle())
+            self.animateObject(self.obstacleImages.last!)
+        }
+    }
+    
+    func animateObject(_ view: UIView) {
+        if Bool.random() && (obstacleImages.last?.frame.origin.y)! < view.frame.height {
+            UIView.animate(withDuration: 0.0001, animations: {
+                self.obstacleImages.last?.frame.origin.y += 3
             }) { (_) in
-                self.animateObject()
+                self.animateObject(view)
             }
         } else {
             if inProccess {
-                animateObject()
+                animateObject(view)
             } else {
                 return
             }
@@ -75,7 +77,10 @@ class GameViewController: UIViewController {
     }
     
     func checkCrush() -> Bool {
-        if self.obstacleImage.frame.intersects(self.carImage.frame) {
+        if (self.obstacleImages.last?.frame.intersects(self.carImage.frame))! {
+            showAlert()
+            carImage.contentMode = .scaleAspectFill
+            carImage.image = UIImage(named: "explosionimage")
             return false
         } else {
             return true
@@ -91,7 +96,7 @@ class GameViewController: UIViewController {
             self.animateRoad(y: y)
             }
         } else {
-            showAlert()
+            return
         }
     }
     

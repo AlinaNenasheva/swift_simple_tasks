@@ -89,7 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="commentSectionTextView" destination="xwq-sC-OVV" id="rUZ-kT-taA"/>
-                        <outlet property="leaveCommentTextField" destination="05S-hC-Efw" id="2qF-hv-Y9Y"/>
+                        <outlet property="leaveCommentTextField" destination="05S-hC-Efw" id="msI-aZ-5vX"/>
                         <outlet property="likeButton" destination="xkr-VZ-XRD" id="Wda-62-H68"/>
                         <outlet property="scrollView" destination="jvS-yd-r0Q" id="yQD-Pk-rUq"/>
                     </connections>

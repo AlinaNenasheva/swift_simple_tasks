@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     var currentWebPage = -1
+    var urlStrings = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         retriveHistory()
-        backButton.isEnabled = false
-        forwardButton.isEnabled = false
+        checkPagination()
     }
     
     func checkPagination() {
@@ -54,24 +54,47 @@ class ViewController: UIViewController {
     @IBAction func reloadButtonPressed(_ sender: Any) {
         if urlTextField.text != "" {
             if let newURL = URL(string: urlTextField.text!) {
-                urlsArray.append(newURL)
-                webView.load(URLRequest(url: newURL))
-                currentWebPage += 1
-                checkPagination()
-                saveHistory()
+                if newURL != urlsArray.last {
+                    urlsArray.append(newURL)
+                    urlStrings.append(newURL.absoluteString)
+                    webView.load(URLRequest(url: newURL))
+                    currentWebPage += 1
+                    checkPagination()
+                    saveHistory()
+                    
+                }
             }
         }
         
     }
     
     func saveHistory() {
-        let archived = try! PropertyListEncoder().encode(urlsArray)
-        UserDefaults.standard.set(archived, forKey: "URLsArray")
+        do{
+            let data = try JSONEncoder().encode(urlStrings)
+            UserDefaults.standard.setValue(data, forKey: "URLsKey")
+        } catch {
+            print(error)
+        }
     }
     
     func retriveHistory() {
-        urlsArray = UserDefaults.standard.object(forKey: "URLsArray") as? [URL] ?? [URL]()
-    }
+            if let data = UserDefaults.standard.value(forKey: "URLsKey") as? Data {
+            do{
+                urlStrings = try JSONDecoder().decode([String].self, from: data)
+            } catch {
+                print(error)
+            }
+        }
+        for url in urlStrings {
+            if let url = URL(string: url) {
+                urlsArray.append(url)
+            }
+        }
+        if let lastURL = urlsArray.last {
+            webView.load(URLRequest(url: lastURL))
+        }
+        currentWebPage = urlsArray.count - 1
 }
 
+}
 

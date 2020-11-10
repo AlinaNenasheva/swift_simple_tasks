@@ -13,15 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     var imageOne : UIImageView!
     var imageTwo : UIImageView!
+    @IBOutlet weak var leaveCommentTextField: UITextField!
     @IBOutlet weak var commentSectionTextView: UITextView!
     var pictures = ["image1": ImageProperties(), "image2": ImageProperties(), "image3": ImageProperties(), "image4": ImageProperties()]
     var imgArr = [UIImage]()
-    
-    @IBOutlet weak var leaveCommentTextField: UITextField!
     var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        retriveInfo()
+        leaveCommentTextField.delegate = self
         for picture in pictures.keys {
             imgArr.append(UIImage(named: picture)!)
         }
@@ -200,6 +201,7 @@ class ViewController: UIViewController {
         } else {
             pictures[imageName]!.like = false
         }
+        saveInfo()
     }
     
     @IBAction func leaveCommentTextFieldEditDidEnd(_ sender: Any) {
@@ -208,31 +210,37 @@ class ViewController: UIViewController {
             clearCommentSection()
             uploadComments()
             leaveCommentTextField.text = ""
+            saveInfo()
         }
     }
     
     func retriveInfo() {
         if let data = UserDefaults.standard.value(forKey: "PropertiesKey") as? Data {
             do{
-                let properties = try JSONDecoder().decode(ImageProperties.self, from: data)
-                for picture in pictures {
-                    picture.value = properties
-                }
+                pictures = try JSONDecoder().decode([String: ImageProperties].self, from: data)
             } catch {
                 print(error)
             }
         }
+        uploadComments()
+        checkLikeButton()
     }
     
     func saveInfo() {
-        for picture in pictures {
         do{
-            let data = try JSONEncoder().encode(picture.value)
+            let data = try JSONEncoder().encode(pictures)
             UserDefaults.standard.setValue(data, forKey: "PropertiesKey")
         } catch {
             print(error)
         }
-        }
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if !(leaveCommentTextField.text?.isEmpty ?? false) {
+            view.endEditing(true)
+        }
+        return true
+    }
+}

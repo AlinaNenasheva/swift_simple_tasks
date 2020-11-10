@@ -4,7 +4,7 @@ class GameViewController: UIViewController {
 
     var roadImage: UIImageView!
     var carImage: UIImageView!
-    var obstacleImages: [UIImageView]!
+    var obstacleImages = [UIImageView]()
     @IBOutlet weak var leftGrassImageView: UIImageView!
     @IBOutlet weak var rightGrassImageView: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -37,9 +37,12 @@ class GameViewController: UIViewController {
         leftSwipeGesture.direction = .left
         view.addGestureRecognizer(leftSwipeGesture)
         let y = roadImage.frame.origin.y
-        obstacleImages.append(self.generateObstacle())
+//        obstacleImages.append(self.generateObstacle())
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
-            self.animateObject(self.obstacleImages.last!)
+            if let obstacle = self.obstacleImages.last {
+                self.animateObject(obstacle)
+                
+            }
         }
         createObjects()
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
@@ -52,17 +55,19 @@ class GameViewController: UIViewController {
             self.animateRoad(y: y)
         }
     }
+
     
     func createObjects() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
-            self.obstacleImages.append(self.generateObstacle())
-            self.animateObject(self.obstacleImages.last!)
+            let obstacle = self.generateObstacle()
+            self.obstacleImages.append(obstacle)
+            self.animateObject(obstacle)
         }
     }
     
     func animateObject(_ view: UIView) {
         if Bool.random() && (obstacleImages.last?.frame.origin.y)! < view.frame.height {
-            UIView.animate(withDuration: 0.0001, animations: {
+            UIView.animate(withDuration: 0.01, animations: {
                 self.obstacleImages.last?.frame.origin.y += 3
             }) { (_) in
                 self.animateObject(view)
@@ -77,7 +82,7 @@ class GameViewController: UIViewController {
     }
     
     func checkCrush() -> Bool {
-        if (self.obstacleImages.last?.frame.intersects(self.carImage.frame))! {
+        if (self.obstacleImages.last?.frame.intersects(self.carImage.frame)) ?? false {
             showAlert()
             carImage.contentMode = .scaleAspectFill
             carImage.image = UIImage(named: "explosionimage")
@@ -100,7 +105,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func generateObstacle() -> UIImageView{
+    func generateObstacle() -> UIImageView {
         let obstacleImage: UIImageView
         let direction = Bool.random()
         if direction {

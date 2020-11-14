@@ -58,7 +58,10 @@ class GameViewController: UIViewController {
 
     
     func createObjects() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            if !self.inProccess {
+                timer.invalidate()
+            }
             let obstacle = self.generateObstacle()
             self.obstacleImages.append(obstacle)
             self.animateObject(obstacle)
@@ -66,20 +69,33 @@ class GameViewController: UIViewController {
     }
     
     func animateObject(_ view: UIView) {
-        if Bool.random() && (obstacleImages.last?.frame.origin.y)! < view.frame.height {
-            UIView.animate(withDuration: 0.01, animations: {
-                self.obstacleImages.last?.frame.origin.y += 3
-            }) { (_) in
-                self.animateObject(view)
+        UIView.animate(withDuration: 0.01, animations: {
+            if let obstacle = self.obstacleImages.last {
+                obstacle.frame.origin.y += 3
             }
-        } else {
-            if inProccess {
-                animateObject(view)
-            } else {
-                return
+        }) { (_) in
+            if let obstacle = self.obstacleImages.last {
+                if self.inProccess && obstacle.frame.origin.y < self.view.frame.height {
+                    self.animateObject(view)
+                }
             }
         }
     }
+        
+//        if Bool.random() && (obstacleImages.last?.frame.origin.y)! < view.frame.height {
+//            UIView.animate(withDuration: 0.01, animations: {
+//                self.obstacleImages.last?.frame.origin.y += 3
+//            }) { (_) in
+//                self.animateObject(view)
+//            }
+//        } else {
+//            if inProccess {
+//                animateObject(view)
+//            } else {
+//                return
+//            }
+//        }
+//    }
     
     func checkCrush() -> Bool {
         if (self.obstacleImages.last?.frame.intersects(self.carImage.frame)) ?? false {
